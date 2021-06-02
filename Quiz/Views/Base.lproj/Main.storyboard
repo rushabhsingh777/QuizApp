@@ -29,28 +29,23 @@
                                     <action selector="submitButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Anv-5r-rYc"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="O5L-Oq-DOg">
-                                <rect key="frame" x="8" y="172" width="398" height="624"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrW-ho-OSV" userLabel="Question">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="0.0"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.58431372550000005" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YT4-jX-8zN">
-                                        <rect key="frame" x="0.0" y="50" width="398" height="574"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrW-ho-OSV" userLabel="Question">
+                                <rect key="frame" x="8" y="172" width="398" height="0.0"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.58431372550000005" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKe-tT-uzP" userLabel="MediaView">
+                                <rect key="frame" x="8" y="188" width="398" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="YT4-jX-8zN" secondAttribute="bottom" id="E8E-Zi-tJJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="hgm-nw-dfq"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg0-kY-WZY">
                                 <rect key="frame" x="8" y="820" width="398" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -62,24 +57,36 @@
                                     <action selector="nextButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T8R-DL-Kgc"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YT4-jX-8zN">
+                                <rect key="frame" x="8" y="404" width="398" height="392"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="O5L-Oq-DOg" secondAttribute="trailing" constant="8" id="2VO-vf-F9k"/>
-                            <constraint firstItem="gg0-kY-WZY" firstAttribute="top" secondItem="O5L-Oq-DOg" secondAttribute="bottom" constant="24" id="EvL-sb-iqr"/>
-                            <constraint firstItem="O5L-Oq-DOg" firstAttribute="top" secondItem="hh8-h4-J5R" secondAttribute="bottom" constant="24" id="Hgg-nK-Pfq"/>
+                            <constraint firstItem="YrW-ho-OSV" firstAttribute="top" secondItem="hh8-h4-J5R" secondAttribute="bottom" constant="24" id="29C-sv-7RJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UKe-tT-uzP" secondAttribute="trailing" constant="8" id="6hV-x0-rYq"/>
+                            <constraint firstAttribute="trailing" secondItem="YrW-ho-OSV" secondAttribute="trailing" constant="8" id="7Dg-gZ-gUa"/>
+                            <constraint firstItem="gg0-kY-WZY" firstAttribute="top" secondItem="YT4-jX-8zN" secondAttribute="bottom" constant="24" id="8IM-go-6zZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YT4-jX-8zN" secondAttribute="trailing" constant="8" id="AKW-ZT-KYP"/>
+                            <constraint firstItem="YT4-jX-8zN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="D0D-91-GEO"/>
+                            <constraint firstItem="YT4-jX-8zN" firstAttribute="top" secondItem="UKe-tT-uzP" secondAttribute="bottom" constant="16" id="EOa-0k-4da"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gg0-kY-WZY" secondAttribute="bottom" constant="8" id="SVl-yS-XJo"/>
-                            <constraint firstItem="O5L-Oq-DOg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="V21-0R-LTP"/>
+                            <constraint firstItem="UKe-tT-uzP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="TbA-Li-Oju"/>
                             <constraint firstItem="hh8-h4-J5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Zxm-VM-FIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hh8-h4-J5R" secondAttribute="trailing" constant="16" id="aHx-V0-vPB"/>
+                            <constraint firstItem="YrW-ho-OSV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="dcy-Jr-J8C"/>
                             <constraint firstItem="gg0-kY-WZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="f2Y-PX-JHV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gg0-kY-WZY" secondAttribute="trailing" constant="8" id="lIZ-4y-IKZ"/>
+                            <constraint firstItem="UKe-tT-uzP" firstAttribute="top" secondItem="YrW-ho-OSV" secondAttribute="bottom" constant="16" id="spi-07-JXD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lBu-ar-n1V"/>
                     <connections>
                         <outlet property="contentView" destination="8bC-Xf-vdC" id="bwj-vM-Ctv"/>
+                        <outlet property="mediaView" destination="UKe-tT-uzP" id="ggB-0I-ftz"/>
+                        <outlet property="mediaViewHeightConstraint" destination="hgm-nw-dfq" id="5Ue-xy-wYB"/>
                         <outlet property="nextButton" destination="gg0-kY-WZY" id="MXv-Bc-97I"/>
                         <outlet property="optionsTableView" destination="YT4-jX-8zN" id="hwQ-Fv-iXa"/>
                         <outlet property="questionLabel" destination="YrW-ho-OSV" id="gDa-Ff-lO7"/>
@@ -110,6 +117,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -14,6 +14,8 @@ class QuestionViewController: UIViewController{
     @IBOutlet weak var optionsTableView: UITableView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var mediaView: UIView!
+    @IBOutlet weak var mediaViewHeightConstraint: NSLayoutConstraint!
     
     let QUESTIONS = "Questions"
     let QUESTION_TABLE_VIEW_CELL_IDENTIFIER = "QuestionTableViewCellIdentifier"
@@ -34,11 +36,31 @@ class QuestionViewController: UIViewController{
         optionsTableView.dataSource = self
         self.optionsTableView.tableFooterView = UIView()
     }
-        
+    
     private func downloadQuestionsList(){
         QuizResource().getQuestions(){ (questions) in
             self.questions = questions
             self.updateQuestion()
+        }
+    }
+    
+    private func updateQuestion(){
+        DispatchQueue.main.async { [self] in
+            if currentIndex < self.questions.count {
+                questionLabel.text = self.questions[currentIndex].questionText
+                configureMediaView()
+                optionsTableView.reloadData()
+            }
+        }
+    }
+    
+    private func configureMediaView(){
+        if self.questions[currentIndex].questionType == QuestionType.TextType{
+            mediaViewHeightConstraint.constant = 0
+        }else{
+            //Handle all media types view
+            //posterImage.loadImage(fromURL: , placeHolderImage: )
+            mediaViewHeightConstraint.constant = 200
         }
     }
     

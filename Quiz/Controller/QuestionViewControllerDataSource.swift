@@ -31,13 +31,4 @@ extension QuestionViewController : UITableViewDataSource{
         return cell!
     }
     
-    func updateQuestion(){
-        DispatchQueue.main.async { [self] in
-            if currentIndex < self.questions.count {
-                questionLabel.text = self.questions[currentIndex].questionText
-                optionsTableView.reloadData()
-            }
-        }
-    }
-    
 }

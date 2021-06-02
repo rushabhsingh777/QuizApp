@@ -6,11 +6,11 @@
 //
 
 import Foundation
-// MARK: - WelcomeElement
 
 struct QuestionModel: Codable {
     let questionType, questionId: Int
     let questionText: String
+    let questionImageUrl: String
     let correctAnswerIds : [Int]
     let options: [Option]
 }

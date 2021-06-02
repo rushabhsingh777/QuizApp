@@ -1,5 +1,5 @@
 //
-//  QuizViewModel.swift
+//  QuestionsDataModel.swift
 //  Quiz
 //
 //  Created by Rushabh Singh on 30/05/21.
@@ -14,10 +14,11 @@ enum QuestionType : Int {
     case VideoType = 4
 }
 
-struct QuizViewModel{
+struct QuestionsDataModel{
     let questionType : QuestionType
     let questionId: Int
     let questionText: String
+    let questionImageUrl: String
     let correctAnswerIds : [Int]
     let options: [Option]
     var userAnswers : [Int] = []
@@ -26,8 +27,8 @@ struct QuizViewModel{
         self.questionId = question.questionId
         self.questionType = QuestionType(rawValue: question.questionType) ?? QuestionType.TextType
         self.questionText = question.questionText
+        self.questionImageUrl = question.questionImageUrl
         self.correctAnswerIds = question.correctAnswerIds
         self.options = question.options
     }
 }
-

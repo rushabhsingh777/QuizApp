@@ -9,15 +9,13 @@ import Foundation
 
 struct QuizResource {
     
-    func getQuestions(completion : @escaping (_ employees : [QuizViewModel]) -> Void) {
-        
-        var questionsList = [QuizViewModel]()
+    func getQuestions(completion : @escaping (_ employees : [QuestionsDataModel]) -> Void) {
+        var questionsList = [QuestionsDataModel]()
         let urlString = ApiConstants.QuestionsListUrl
-        
         HttpUtil.shared.getData(urlString: urlString, responseType: [QuestionModel].self) { (response) in
             if let response = response {
                 questionsList = response.map({
-                    return QuizViewModel(question : $0)
+                    return QuestionsDataModel(question : $0)
                 })
             }
             completion(questionsList)

@@ -11,7 +11,7 @@ class ResultTableViewController: UIViewController {
     
     let RESULT_TITLE = "Result"
     let RESULT_TABLE_VIEW_CELL_IDENTIFIER = "ResultTableViewCellIdentifier"
-    var questions = [QuizViewModel]()
+    var questions = [QuestionsDataModel]()
     
     @IBOutlet weak var resultTableView: UITableView!
     

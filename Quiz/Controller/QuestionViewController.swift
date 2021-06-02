@@ -17,7 +17,7 @@ class QuestionViewController: UIViewController{
     
     let QUESTIONS = "Questions"
     let QUESTION_TABLE_VIEW_CELL_IDENTIFIER = "QuestionTableViewCellIdentifier"
-    var questions = [QuizViewModel]()
+    var questions = [QuestionsDataModel]()
     var currentIndex = 0
     
     override func viewDidLoad() {

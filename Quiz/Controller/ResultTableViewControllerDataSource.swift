@@ -35,9 +35,11 @@ extension ResultTableViewController : UITableViewDataSource{
         if indexPath.section < self.questions.count{
             let option = self.questions[indexPath.section].options[indexPath.row]
             cell?.textLabel!.text = option.text
+            cell?.textLabel!.font = UIFont.boldSystemFont(ofSize: 14)
+            cell?.textLabel?.textColor = UIColor.gray
+            cell?.textLabel?.numberOfLines = 0
             let userAnswers = self.questions[indexPath.section].userAnswers
             let correctAnswers = self.questions[indexPath.section].correctAnswerIds
-            cell?.textLabel!.font = UIFont.boldSystemFont(ofSize: 14)
             if userAnswers.contains(option.id) {
                 if correctAnswers.contains(option.id) {
                     cell?.textLabel?.textColor = UIColor.green
@@ -45,12 +47,7 @@ extension ResultTableViewController : UITableViewDataSource{
                     cell?.textLabel?.textColor = UIColor.red
                 }
             }
-            else{
-                cell?.textLabel?.textColor = UIColor.gray
-            }
         }
-        cell?.textLabel?.numberOfLines = 0
-        
         return cell!
     }
     

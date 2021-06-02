@@ -21,13 +21,12 @@ extension QuestionViewController : UITableViewDataSource{
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: QUESTION_TABLE_VIEW_CELL_IDENTIFIER)
         }
+        cell?.accessoryType = .none
+        cell?.textLabel?.numberOfLines = 0
         if currentIndex < self.questions.count {
             let option = self.questions[currentIndex].options[indexPath.row].text
             cell?.textLabel!.text = option
         }
-        cell!.accessoryType = .none
-        cell?.textLabel?.numberOfLines = 0
-        
         return cell!
     }
     

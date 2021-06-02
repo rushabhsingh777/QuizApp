@@ -28,6 +28,7 @@ class QuestionViewController: UIViewController{
         self.navigationItem.setHidesBackButton(true, animated: true)
         setUpTableView()
         downloadQuestionsList()
+        mediaView.isHidden = true
         submitButton.isHidden = true
     }
     
@@ -48,20 +49,57 @@ class QuestionViewController: UIViewController{
         DispatchQueue.main.async { [self] in
             if currentIndex < self.questions.count {
                 questionLabel.text = self.questions[currentIndex].questionText
-                configureMediaView()
+                checkMediaQuestions()
                 optionsTableView.reloadData()
             }
         }
     }
     
-    private func configureMediaView(){
+    private func checkMediaQuestions(){
         if self.questions[currentIndex].questionType == QuestionType.TextType{
             mediaViewHeightConstraint.constant = 0
+            mediaView.isHidden = true
         }else{
-            //Handle all media types view
-            //posterImage.loadImage(fromURL: , placeHolderImage: )
-            mediaViewHeightConstraint.constant = 200
+            configureMediaView()
         }
+    }
+    
+    private func configureMediaView(){
+        let questionType = self.questions[currentIndex].questionType
+        switch questionType {
+        case QuestionType.ImageType:
+            addImageQuestion()
+        case QuestionType.AudioType:
+            addAudioQuestion()
+        case QuestionType.VideoType:
+            addVideoQuestion()
+        default:
+            mediaViewHeightConstraint.constant = 0
+            mediaView.isHidden = true
+        }
+    }
+    
+    private func addImageQuestion(){
+        if self.questions[currentIndex].questionImageUrl.isEmpty{
+            mediaViewHeightConstraint.constant = 0
+            mediaView.isHidden = true
+        }else{
+            mediaView.isHidden = false
+            let imageUrl = URL(string: self.questions[currentIndex].questionImageUrl)
+            let imageView = LazyImageView(frame:CGRect(x:0, y:0, width:300, height:200));
+            imageView.loadImage(fromURL: imageUrl!, placeHolderImage: ImagesNameConstant.placeholder)
+            imageView.contentMode = UIView.ContentMode.scaleToFill
+            mediaView.addSubview(imageView)
+            mediaViewHeightConstraint.constant = 200 //store in constant
+        }
+    }
+    
+    private func addVideoQuestion(){
+        
+    }
+    
+    private func addAudioQuestion(){
+        
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {

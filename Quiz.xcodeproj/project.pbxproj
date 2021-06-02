@@ -26,6 +26,7 @@
 		9B8E8A24266691F400D03214 /* ResultTableViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E8A23266691F400D03214 /* ResultTableViewControllerDataSource.swift */; };
 		9BFF972326671C480094070D /* QuestionsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF972226671C480094070D /* QuestionsDataModel.swift */; };
 		9BFF972B266723600094070D /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF972A266723600094070D /* LazyImageView.swift */; };
+		9BFF9730266730270094070D /* QuizConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF972F266730270094070D /* QuizConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		9B8E8A23266691F400D03214 /* ResultTableViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewControllerDataSource.swift; sourceTree = "<group>"; };
 		9BFF972226671C480094070D /* QuestionsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsDataModel.swift; sourceTree = "<group>"; };
 		9BFF972A266723600094070D /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		9BFF972F266730270094070D /* QuizConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				9B79517226629CF2003B53A6 /* ApiConstant.swift */,
+				9BFF972F266730270094070D /* QuizConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				9B79516526629C06003B53A6 /* QuizDataModel.swift in Sources */,
 				9B58118E2663CFB200F13FCC /* ResultTableViewController.swift in Sources */,
 				9B752B1B2662903500C4B788 /* SceneDelegate.swift in Sources */,
+				9BFF9730266730270094070D /* QuizConstants.swift in Sources */,
 				9B3468B6266353EC00980C04 /* QuestionViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
